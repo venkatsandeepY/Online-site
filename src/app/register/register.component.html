@@ -18,7 +18,7 @@
         <label>Enter User Name:</label>
         <input type="text" name="uid" placeholder="First and last name" class="form-control"><br>
         <label>Enter DOB: </label>
-        <input type="date" value="enter DOB" /><br><br>
+        <input type="date" max="{{ getMaxDate() | date: 'yyyy-MM-dd' }}" [(ngModel)]="selectedDate"><br><br>
         <label>Enter Gender: </label>
         <input type="radio" id="male" name="gender" value="male">
         <label for="male">Male</label>

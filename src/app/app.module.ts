@@ -14,6 +14,8 @@ import { provideAnimationsAsync } from '@angular/platform-browser/animations/asy
 import { MatIconModule } from '@angular/material/icon';
 import { FormsModule } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
+import { DiscountPipe } from './discount.pipe';
+
 
 @NgModule({
   declarations: [
@@ -24,7 +26,9 @@ import { ReactiveFormsModule } from '@angular/forms';
     SearchComponent,
     NotfoundComponent,
     FeedbackComponent,
+    DiscountPipe,
     BuyComponent
+    
   ],
   imports: [
     BrowserModule,

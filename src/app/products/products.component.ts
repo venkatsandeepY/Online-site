@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { OnlineserviceService, IPrd } from '../onlineservice.service';
+import { DiscountPipe } from '../discount.pipe';
+
 
 @Component({
   selector: 'app-products',
@@ -11,6 +13,7 @@ export class ProductsComponent {
   prod: IPrd[] = [];
   constructor(prd: OnlineserviceService) {
     this.prod = prd.getproducts();
+    
   }
   value: Boolean = true;
   showOrHide() {

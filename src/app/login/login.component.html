@@ -1,0 +1,53 @@
+<p>login works!</p>
+<!--<div style="width:500px; margin-left: 300px;">
+    <form>
+        <label> Enter Username:</label>
+        <span class="material-icons">
+            person
+        </span>
+        <input type="text" id="uid" class="form-control" />
+
+        <label> Enter passowrd:</label>
+        <span class="material-symbols-outlined">
+            key
+        </span>
+        <input type="password" id="pwd" class="form-control" /><br>
+        <input type="button" value="login" class="btn btn-primary"  (click)="validate()"/>
+        <a routerLink="/register" class="btn btn-info">New User/Clickhere</a>
+    </form>
+</div> -->
+<style>
+    .v {
+        border: 3px solid green;
+        background-color: yellow;
+    }
+
+    .i {
+        border: 3px solid red;
+        background-color: yellow;
+    }
+</style>
+
+<div style="width:500px; margin-left: 300px;">
+    <form #frm="ngForm" (ngSubmit)="validate(frm.value)">
+
+        <span class="material-icons" style="color:blue;font-size:100px;">
+            person
+        </span>{{frm.value | json }}
+        <input type="text" name="uid" #u="ngModel" ngModel required [minlength]="5" [class.v]="u.valid && u.touched"
+            [class.i]="u.invalid && u.touched" class="form-control" />
+        <div class="btn btn-info">
+            <div *ngIf="u.errors?.['required'] && u.touched">Enter Username</div>
+        </div>
+        <br>
+        <span class="material-icons" style="color:blue;font-size:100px;">
+            key
+        </span>
+        <input type="password" name="pwd" #p="ngModel" ngModel class="form-control" required
+            [class.v]="p.valid && p.touched" [class.i]="p.invalid && p.touched" pattern="[a-k]\d{4}" />
+        <input type="submit" [disabled]="frm.form.invalid" value="Login" class="btn btn-primary">
+    </form>
+</div>
+<div style="background-color:steelblue ; color:white">
+    {{status}}
+</div>

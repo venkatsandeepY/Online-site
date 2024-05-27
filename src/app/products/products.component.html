@@ -1,0 +1,44 @@
+<style>
+    .hi {
+        background-color: blue;
+    }
+
+    .hello {
+        background-color: brown;
+    }
+
+    .index {
+        background-color: magenta;
+    }
+    .button{
+
+    }
+</style>
+<input type="button" value="show/hide" class="btn btn-primary" (click)="showOrHide()">
+<div class="row">
+    <div class="col-md-4" *ngFor="let i of prod">
+
+        <img src={{i.pimage}} *ngIf="value">
+        <div>{{i.pid}}</div>
+        <div>{{i.pname}}</div>
+        <div>{{i.price }}</div>
+        <div>{{i.qty}}</div>
+        <div><a routerLink="/buy" class="btn btn-primary">Buy</a></div>
+    </div>
+</div>
+
+
+
+<!--<div *ngFor="let items of prod;let i=index;let f=first;let l =last;let e=even;let o=odd;"[class.hi]="o"[class.hello]="e"[class.index]="l">
+    {{i+1}}<br>
+    {{f}}<br>
+    {{l}}<br>
+    {{e}}<br>
+    {{o}}<br>
+    {{items.pid}}
+    {{items.pname}}
+    {{items.price}}
+    {{items.qty}}<br>
+    <img src={{items.pimage}}>
+    <hr>
+</div>-->

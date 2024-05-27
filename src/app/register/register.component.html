@@ -1,0 +1,44 @@
+<p>register works!</p>
+
+<style>
+    .v {
+        border: 3px solid green;
+        background-color: yellow;
+    }
+
+    .i {
+        border: 3px solid red;
+        background-color: yellow;
+    }
+</style>
+
+<div style="width:500px; margin-left: 300px;">
+    <form #frm="ngForm">
+
+        <label>Enter User Name:</label>
+        <input type="text" name="uid" placeholder="First and last name" class="form-control"><br>
+        <label>Enter DOB: </label>
+        <input type="date" value="enter DOB" /><br><br>
+        <label>Enter Gender: </label>
+        <input type="radio" id="male" name="gender" value="male">
+        <label for="male">Male</label>
+        <input type="radio" id="female" name="gender" value="female">
+        <label for="female">Female</label><br><br>
+        <label>Enter E-mail id:</label>
+        <input type="email" name="email" class="form-control" /><br>
+        <label>Enter Nationality :</label>
+        <select id="nationality" name="nationality">
+            <option value="India">INDIA</option>
+            <option value="england">ENGLAND</option>
+            <option value="brazil">BRAZIL</option>
+            <option value="srilanka">SRLANKA</option>
+            <option value="nepal">NEPAL</option>
+        </select><br><br>
+
+        <input type="submit" [disabled]="frm.form.invalid" value="Login" class="btn btn-primary">
+
+    </form>
+</div>
+<div style="background-color:steelblue ; color:white">
+
+</div>

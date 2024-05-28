@@ -14,15 +14,15 @@
                 <a class="nav-link" href="/feedback"> Feedback </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="/login"> Login </a>
+                <a class="nav-link" href="/buy"> Buy </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="/buy"> Buy </a>
+                <a class="nav-link" href="/login"> Login </a>
             </li>
         </ul>
         <form class="d-flex justify-content-end">
-            <input class="form-control me-2" type="text" placeholder="Search">
-            <button class="btn btn-success" type="button">Search</button>
+            <input id="txtsearch" class="form-control me-2" type="text" placeholder="Search">
+            <button class="btn btn-success" type="button" (click)="show()">Search</button>
         </form>
     </nav>
 </div>

@@ -20,7 +20,7 @@
 
         <img src={{i.pimage}} *ngIf="value">
         <div>{{i.pid |slice:2:4}}</div>
-        <div>{{i.pname | uppercase |slice:0:2}}</div>
+        <div>{{i.pname }}</div>
         <div>{{i.price |currency:'INR'}}</div>
         <div>{{i.price   | discount |currency:'INR'}}</div>
         <div>{{i.qty }}</div>

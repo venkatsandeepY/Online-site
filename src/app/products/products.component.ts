@@ -12,7 +12,7 @@ import { DiscountPipe } from '../discount.pipe';
 export class ProductsComponent {
   prod: IPrd[] = [];
   constructor(prd: OnlineserviceService) {
-    this.prod = prd.getproducts();
+    this.prod = prd.prod;
     
   }
   value: Boolean = true;

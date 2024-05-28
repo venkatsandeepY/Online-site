@@ -11,7 +11,7 @@ import { ActivatedRoute } from '@angular/router';
 export class BuyComponent {
   res: string = " ";
   pid : any ;pname:any;pimage:any;price:any;
-  hello:string="RCB"
+  hello:string=""
   qty:number=1;
   
   //we can read query string from the current url by using ActivatedRoute

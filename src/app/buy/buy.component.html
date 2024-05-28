@@ -13,8 +13,9 @@
    <label>Selected Quantity</label>
     <input type="text" [(ngModel)]="qty">
     <label> Individual Price</label>
-    <input type="text" [(ngModel)]="price"><br>
-    <input type="button" value="confirm Buy" class="btn btn-primary">
+    <input type="text" [(ngModel)]="price"><br><br>
+    <input type="button" value="Total price: {{qty*price}}" class="btn btn-warning">
 </div>
 
-<input type="button" value="Total price: {{qty*price}}" class="btn btn-warning">
+
+<input type="button" value="confirm Buy" class="btn btn-primary">

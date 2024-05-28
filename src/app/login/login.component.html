@@ -44,7 +44,7 @@
             key
         </span>
         <input type="password" name="pwd" #p="ngModel" ngModel class="form-control" required
-            [class.v]="p.valid && p.touched" [class.i]="p.invalid && p.touched" pattern="[a-k]\d{4}" />
+            [class.v]="p.valid && p.touched" [class.i]="p.invalid && p.touched" />
         <input type="submit" [disabled]="frm.form.invalid" value="Login" class="btn btn-primary">
     </form>
 </div>

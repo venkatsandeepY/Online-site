@@ -24,7 +24,7 @@
         <div>{{i.price |currency:'INR'}}</div>
         <div>{{i.price   | discount |currency:'INR'}}</div>
         <div>{{i.qty }}</div>
-        <div><a routerLink="/buy" class="btn btn-primary">Buy</a></div>
+        <div><a routerLink="/buy" [queryParams]="{a:i.pid,b:i.pname,c:i.price,d:i.pimage}" class="btn btn-primary">Buy</a></div>
     </div>
 </div>
 

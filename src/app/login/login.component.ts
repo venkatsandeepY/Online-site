@@ -1,15 +1,17 @@
 import { Component } from '@angular/core';
 import { Route, Router } from '@angular/router';
+import { OnlineserviceService } from '../onlineservice.service';
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
-  styleUrl: './login.component.css'
+  styleUrl: './login.component.css',
+  providers :[OnlineserviceService]
 })
 export class LoginComponent {
 
 status : string ='';
-constructor(public ob: Router){
+constructor(public ob: Router , public l : OnlineserviceService){
 
 }
   validate(frm:any)
@@ -28,4 +30,22 @@ constructor(public ob: Router){
           this.status ="invalid user";
       }
   }
+
+  result:any
+login(data:any)
+{
+this.l.userlogin(data).subscribe(c=> {this.result= c
+if(this.result > 0)
+  {
+    this.ob.navigate(['products'])
+    sessionStorage.setItem("u",data.uname)
   }
+  else
+  {
+    this.status="invalid user"
+  }
+
+})
+  
+}
+}

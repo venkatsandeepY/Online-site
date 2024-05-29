@@ -13,21 +13,24 @@
 </style>
 
 <div style="width:500px; margin-left: 300px;">
-    <form #frm="ngForm">
+   <form #frm="ngForm" (ngSubmit)="validate(frm.value)">
 
         <label>Enter User Name:</label>
-        <input type="text" name="uid" placeholder="First and last name" class="form-control"><br>
-        <label>Enter DOB: </label>
-        <input type="date" max="{{ getMaxDate() | date: 'yyyy-MM-dd' }}" [(ngModel)]="selectedDate"><br><br>
+        <input type="text" name="uname" ngModel placeholder="First and last name" class="form-control"><br>
+        <label>Enter Passwpord:</label>
+        <input type="password" name="password" ngModel placeholder="password" class="form-control"><br>
         <label>Enter Gender: </label>
-        <input type="radio" id="male" name="gender" value="male">
+        <input type="radio" id="male" ngModel name="gender" value="male">
         <label for="male">Male</label>
-        <input type="radio" id="female" name="gender" value="female">
+        <input type="radio" id="female" ngModel name="gender" value="female" >
         <label for="female">Female</label><br><br>
+
+        <label>Enter DOB: </label>
+        <input type="date"  name ="DOB" ngModel class="form-control"  max="{{ getMaxDate() | date: 'yyyy-MM-dd' }}" [(ngModel)]="selectedDate"><br><br>
         <label>Enter E-mail id:</label>
-        <input type="email" name="email" class="form-control" /><br>
+        <input type="email" name="email" ngModel class="form-control" /><br>
         <label>Enter Nationality :</label>
-        <select id="nationality" name="nationality">
+        <select  ngModel name="nationality" class="form-control" >
             <option value="India">INDIA</option>
             <option value="england">ENGLAND</option>
             <option value="brazil">BRAZIL</option>
@@ -37,7 +40,27 @@
 
         <input type="submit" [disabled]="frm.form.invalid" value="Login" class="btn btn-primary">
 
-    </form>
+    </form> 
+   <!-- <form #frm="ngForm" (ngSubmit)="validate(frm.value)">
+
+        <label>Enter username</label>
+        <input type="text" name="uname" ngModel class="form-control"/>
+        <label>Enter Password</label>
+        <input type="password" name="password" ngModel class="form-control"/>
+        <label>Select Gender</label>
+        M<input type="radio" name="gender" value=1 ngModel class="form-checked"/>
+        F<input type="radio" name="gender" value=0 ngModel class="form-checked"/>
+        <label>Select DOB</label>
+        <input type="date" name="DOB" ngModel class="form-control"/>
+        <label>Enter Email</label>
+        <input type="email" name="email" ngModel class="form-control"/>
+        <label>Select Nationality</label>
+        <select name="nationality" ngModel class="form-control">
+            <option>India</option>
+            <option>Japan</option>
+        </select>
+        <input type="submit" class="btn btn-primary"/>
+        </form> -->
 </div>
 <div style="background-color:steelblue ; color:white">
 

@@ -12,7 +12,8 @@ import { DiscountPipe } from '../discount.pipe';
 export class ProductsComponent {
   prod: IPrd[] = [];
   constructor(prd: OnlineserviceService) {
-    this.prod = prd.prod;
+    //this.prod = prd.prod;
+    prd.showproduct().subscribe(result => this.prod=result)
     
   }
   value: Boolean = true;

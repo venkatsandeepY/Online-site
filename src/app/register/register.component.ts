@@ -1,13 +1,19 @@
 import { Component } from '@angular/core';
+import { OnlineserviceService } from '../onlineservice.service';
 
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
-  styleUrl: './register.component.css'
+  styleUrl: './register.component.css',
+  providers :[OnlineserviceService]
 })
 export class RegisterComponent {
   selectedDate: string = "";
 
+  constructor(public ob : OnlineserviceService)
+  {
+   
+  }
   getMaxDate(): string {
     // Get current date
     const currentDate = new Date();
@@ -18,4 +24,8 @@ export class RegisterComponent {
     return `${year}-${month}-${day}`;
   }
 
+  validate(frm :any)
+  {
+    this.ob.Addnewuser(frm).subscribe(result => alert(result.message))
+  }
 }

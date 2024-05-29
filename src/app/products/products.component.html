@@ -10,21 +10,21 @@
     .index {
         background-color: magenta;
     }
-    .button{
 
-    }
+    .button {}
 </style>
 <input type="button" value="show/hide" class="btn btn-primary" (click)="showOrHide()">
 <div class="row">
     <div class="col-md-4" *ngFor="let i of prod">
 
-        <img src={{i.pimage}} *ngIf="value">
+        <img src="http://localhost:3000/{{i.pimage}}" *ngIf="value">
         <div>{{i.pid |slice:2:4}}</div>
         <div>{{i.pname }}</div>
         <div>{{i.price |currency:'INR'}}</div>
-        <div>{{i.price   | discount |currency:'INR'}}</div>
+        <div>{{i.price | discount |currency:'INR'}}</div>
         <div>{{i.qty }}</div>
-        <div><a routerLink="/buy" [queryParams]="{a:i.pid,b:i.pname,c:i.price,d:i.pimage}" class="btn btn-primary">Buy</a></div>
+        <div><a routerLink="/buy" [queryParams]="{a:i.pid,b:i.pname,c:i.price,d:i.pimage}"
+                class="btn btn-primary">Buy</a></div>
     </div>
 </div>
 

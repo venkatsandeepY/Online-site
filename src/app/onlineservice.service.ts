@@ -1,8 +1,34 @@
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
 
 @Injectable() // obejct is created, and the component will be only 
 //consuming the objects(no need to create object in the component file)
 export class OnlineserviceService {
+
+  constructor(public h:HttpClient) {
+
+
+  }
+
+  showproduct() : Observable<any>
+  {
+
+   const httpOptions = { headers: new HttpHeaders ({ 'Content-Type': 'application/json'}) };  
+ return this.h.get('http://localhost:3000/show',httpOptions)
+  }
+
+  Addnewuser(data:any):Observable<any>
+{
+  const httpOptions = { headers: new HttpHeaders ({ 'Content-Type': 'application/json'}) };  
+ return this.h.post('http://localhost:3000/add',data,httpOptions)
+}
+
+userlogin(data : any) : Observable<any>
+{
+  const httpOptions = { headers: new HttpHeaders ({ 'Content-Type': 'application/json'}) };  
+  return this.h.post('http://localhost:3000/login',data,httpOptions)
+}
   add(a: number, b: number) {
     return ('sum is ' + a + b)
   }
@@ -11,8 +37,7 @@ export class OnlineserviceService {
     return ('multiply is ' + c * d)
   }
 
-  constructor() {
-  }
+  
   prod: IPrd[] = [
     { pid: "p001", pname: "TV", price: 10000, qty: 10, pimage: '/assets/tv.jpg' },
     { pid: "p002", pname: "Washing machine", price: 12000, qty: 9, pimage: '/assets/washingmachine.jpg' },

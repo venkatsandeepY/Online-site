@@ -15,6 +15,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { FormsModule } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
 import { DiscountPipe } from './discount.pipe';
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -33,6 +34,7 @@ import { DiscountPipe } from './discount.pipe';
   imports: [
     BrowserModule,
     AppRoutingModule,
+    HttpClientModule,
     MatIconModule,
     FormsModule,
     ReactiveFormsModule

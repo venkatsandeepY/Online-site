@@ -34,7 +34,7 @@
         <span class="material-icons" style="color:blue;font-size:100px;">
             person
         </span>{{frm.value | json }}
-        <input type="text" name="uid" #u="ngModel" ngModel required [minlength]="5" [class.v]="u.valid && u.touched"
+        <input type="text" name="uname" #u="ngModel" ngModel required [minlength]="5" [class.v]="u.valid && u.touched"
             [class.i]="u.invalid && u.touched" class="form-control" />
         <div class="btn btn-info">
             <div *ngIf="u.errors?.['required'] && u.touched">Enter Username</div>
@@ -43,7 +43,7 @@
         <span class="material-icons" style="color:blue;font-size:100px;">
             key
         </span>
-        <input type="password" name="pwd" #p="ngModel" ngModel class="form-control" required
+        <input type="password" name="password" #p="ngModel" ngModel class="form-control" required
             [class.v]="p.valid && p.touched" [class.i]="p.invalid && p.touched" />
         <input type="submit" [disabled]="frm.form.invalid" value="Login" class="btn btn-primary">
     </form>

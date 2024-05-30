@@ -8,6 +8,7 @@ import { SearchComponent } from './search/search.component';
 import { BuyComponent } from './buy/buy.component';
 import { NotfoundComponent } from './notfound/notfound.component';
 import { myGuardGuard } from './my-guard.guard';
+import { ParentComponent } from './parent/parent.component';
 
 const routes: Routes = [
   {
@@ -27,6 +28,9 @@ const routes: Routes = [
   },
   {
     path:'search',component:SearchComponent
+  },
+  {
+    path:'parent',component:ParentComponent
   },
   {
     path:'**', component:NotfoundComponent

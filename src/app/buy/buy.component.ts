@@ -27,6 +27,20 @@ export class BuyComponent {
    })
   }
 
+  placeorder()
+  {
+  
+    console.log('entered inside placeorder')
+    var res={
+      username:sessionStorage.getItem("u"),
+          pid:this.pid,
+          transdate:new Date(),
+          qty:this.qty
+    }
+    this.ob.buy(res).subscribe(c => alert(c.toString))
+  
+  }
+
   hi(){
     this.ob.add(10,30);
   }

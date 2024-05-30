@@ -29,6 +29,13 @@ userlogin(data : any) : Observable<any>
   const httpOptions = { headers: new HttpHeaders ({ 'Content-Type': 'application/json'}) };  
   return this.h.post('http://localhost:3000/login',data,httpOptions)
 }
+buy(data : any)
+{
+  console.log("entered inside service for buy")
+  const httpOptions = { headers: new HttpHeaders ({ 'Content-Type': 'application/json'}) };  
+  return this.h.post('http://localhost:3000/buy',data,httpOptions)
+}
+
   add(a: number, b: number) {
     return ('sum is ' + a + b)
   }

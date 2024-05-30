@@ -16,6 +16,8 @@ import { FormsModule } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
 import { DiscountPipe } from './discount.pipe';
 import { HttpClientModule } from '@angular/common/http';
+import { ParentComponent } from './parent/parent.component';
+import { ChildComponent } from './child/child.component';
 
 
 @NgModule({
@@ -28,7 +30,9 @@ import { HttpClientModule } from '@angular/common/http';
     NotfoundComponent,
     FeedbackComponent,
     DiscountPipe,
-    BuyComponent
+    BuyComponent,
+    ParentComponent,
+    ChildComponent
     
   ],
   imports: [

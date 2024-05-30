@@ -19,11 +19,11 @@ constructor(public ob: Router , public l : OnlineserviceService){
     //let u = (document.getElementById("uid") as HTMLInputElement).value
   // let p = (document.getElementById("pwd") as HTMLInputElement).value
 
-    if(frm.uid=="admin")
+    if(frm.uname=="admin")
       {
         this.ob.navigate(['products'])
          this.status = "valid user";
-         sessionStorage.setItem("u",frm.uid)
+         sessionStorage.setItem("u",frm.uname)
       }
       else{
         
@@ -32,20 +32,22 @@ constructor(public ob: Router , public l : OnlineserviceService){
   }
 
   result:any
-login(data:any)
-{
-this.l.userlogin(data).subscribe(c=> {this.result= c
-if(this.result > 0)
+  loginuser(data:any)
   {
-    this.ob.navigate(['products'])
-    sessionStorage.setItem("u",data.uname)
-  }
-  else
-  {
-    this.status="invalid user"
-  }
-
-})
+  this.l.userlogin(data).subscribe(c=> {this.result= c.message[0].cnt
   
-}
+  if(this.result > 0)
+    {
+      alert(this.result)
+      this.ob.navigate(['products'])
+      sessionStorage.setItem("u",data.uname)
+    }
+    else
+    {
+      this.status="invalid user"
+    }
+  
+  })
+  
+  }
 }

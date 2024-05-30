@@ -3,7 +3,8 @@
 
 
 
-<img src="{{pimage}}"> <br><br>
+<!--<img src="{{pimage}}"> -->
+<img src="http://localhost:3000/{{pimage}}"> <br><br>
 {{pid}}<br><br>
 {{pname}}<br><br>
 {{price}}<br><br>
@@ -18,4 +19,4 @@
 </div>
 
 
-<input type="button" value="confirm Buy" class="btn btn-primary">
+<input type="button" value="confirm Buy" (click)="placeorder()" class="btn btn-primary">

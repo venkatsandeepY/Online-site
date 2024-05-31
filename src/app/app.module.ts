@@ -18,6 +18,8 @@ import { DiscountPipe } from './discount.pipe';
 import { HttpClientModule } from '@angular/common/http';
 import { ParentComponent } from './parent/parent.component';
 import { ChildComponent } from './child/child.component';
+import { AngularfeaturesComponent } from './angularfeatures/angularfeatures.component';
+import { HotComponent } from './hot/hot.component';
 
 
 @NgModule({
@@ -32,7 +34,9 @@ import { ChildComponent } from './child/child.component';
     DiscountPipe,
     BuyComponent,
     ParentComponent,
-    ChildComponent
+    ChildComponent,
+    AngularfeaturesComponent,
+    HotComponent
     
   ],
   imports: [

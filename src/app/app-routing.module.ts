@@ -9,6 +9,7 @@ import { BuyComponent } from './buy/buy.component';
 import { NotfoundComponent } from './notfound/notfound.component';
 import { myGuardGuard } from './my-guard.guard';
 import { ParentComponent } from './parent/parent.component';
+import { AngularfeaturesComponent } from './angularfeatures/angularfeatures.component';
 
 const routes: Routes = [
   {
@@ -31,6 +32,9 @@ const routes: Routes = [
   },
   {
     path:'parent',component:ParentComponent
+  },
+  {
+      path :'ang' , component:AngularfeaturesComponent
   },
   {
     path:'**', component:NotfoundComponent

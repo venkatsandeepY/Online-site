@@ -1,0 +1,160 @@
+<p>angularfeatures works!</p>
+<!-- angular previous way to write if else conditions-->
+<!--<ng-container *ngIf="b; then one; else two"> </ng-container>
+<ng-template #one>
+    <div>condition one executed</div>
+</ng-template>-->
+
+<!-- ng-template is block having any code to call for reuse purpose-->
+<!--<ng-template #two>
+    <div>condition two executed</div>
+</ng-template>
+<hr>
+<hr>-->
+
+<!-- angular 17 way to write if else conditions-->
+
+<!--@if(b) {
+<div> condition one executed </div>
+}
+@else
+{
+<div> condition two executed </div>
+}
+<hr>
+<hr>-->
+<!-- if else if else previous -->
+<!--<h2 *ngIf="type == 1; else two">One</h2>
+<ng-template #two>
+    <h2 *ngIf="type == 2; else three">Two</h2>
+</ng-template>
+<ng-template #three>
+    <h2>three</h2>
+</ng-template>
+<hr>
+<hr>-->
+<!-- if else if else in angular 17-->
+<!-- @if (type == 1) {
+<h2>One</h2>
+} @else if(type == 2) {
+<h2>Two</h2>
+} @else {
+<h2>Three</h2>
+} -->
+
+<!-- switch before angular 17-->
+<!--<hr>
+<hr>
+<div [ngSwitch]="1">
+    <p *ngSwitchCase="0">You have first message</p>
+    <p *ngSwitchCase="1">You have second message</p>
+    <p *ngSwitchDefault>default executed</p>
+</div>
+<hr>
+<hr>
+<!-- switch case in angular 17 feature-->
+<!--@switch (type) {
+@case (0) {
+<div>You have first message</div>
+}
+@case (1) {
+<div>You have second message</div>
+}
+@default{
+<div>default executed</div>
+}
+}-->
+<hr>
+<hr> 
+<!--for loop before angular feature -->
+<!--<div style="background-color:rebeccapurple;">for loop before angular feature </div>
+<div *ngFor="let item of countries;let i = index;let f = first;let l = last;let e = even;let o = odd;">
+
+    First:{{f}} - Last:{{l}} - Even:{{e}} -Odd:{{o}} : {{item}}<br>
+</div>
+<hr>
+<hr>-->
+<!-- for loop in angular 17-->
+<!--<div style="background-color:chartreuse;">for loop in angular feature </div>
+@for (item of countries; track item; let i = $index,f= $first,l = $last,e = $even, o = $odd){
+First:{{f}} - Last:{{l}} - Even:{{e}} -Odd:{{o}} : {{item}}<br>
+}
+
+@defer (on timer(5s)){
+<app-hot></app-hot>
+}
+-->
+
+<!--
+
+    -->
+<!--@defer (on timer(5s)){
+<app-hot></app-hot>
+} @placeholder (minimum 500ms){
+<h1>some content will load here ..coming soon</h1>
+}-->
+<!--<div style="border:3px solid blue"></div>
+@defer(on interaction) {
+    <app-hot></app-hot>
+    }  @placeholder (minimum 500ms){
+        <h1>placeholder</h1>
+        } 
+    -->
+
+<!---- <h1 #data>click here to load </h1>
+        @defer(on interaction(data)) {
+            <app-hot></app-hot>
+            }  @placeholder (minimum 500ms){
+                <h1>placeholder</h1>
+                } -->
+
+
+               <!----<h1 #data>click here to load </h1>
+                @defer(on hover(data)) {
+                    <app-hot></app-hot>
+                    }  @placeholder (minimum 500ms){
+                        <h1>placeholder hover</h1>
+                        } -->
+
+
+                  <!--     @defer(on immediate) {
+                            <app-hot></app-hot>
+                            }  @placeholder (minimum 500ms){
+                                <h1>immediate</h1>
+                                }  -->
+
+
+
+                                   
+      <!--      <input type="button" value="click" (click)="show()">
+            @defer(when  b) {
+                <app-hot></app-hot>
+                }  @placeholder (minimum 2000ms){
+                    <h1>defer on condition </h1>
+                    } 
+
+                    <hr><hr>
+                    @defer(when  b) {
+                        <app-hot></app-hot>
+                        }@loading (minimum 3000ms){
+                            <h1>loading</h1>
+                            } 
+                @placeholder (minimum 2000ms){
+                            <h1>placeholder</h1>
+                            }  -->
+
+                            @defer(on viewport(greeting)) {
+                                <app-hot></app-hot>
+                                }  @loading (minimum 3000ms){
+                                    <h1>loading</h1>
+                                    } 
+                                    @placeholder (minimum 3000ms){
+                                        <h1>placeholder</h1>
+                                        } 
+                    
+                        <br><br><br><br><br><br><br>
+                          <br><br><br><br><br><br><br><br>
+                          <br><br><br><br><br><br><br><br>
+                          <br><br><br><br><br><br><br><br><br>
+                          <br><br><br><br><br><br><br><br>
+                          <div #greeting>Hello!</div>
